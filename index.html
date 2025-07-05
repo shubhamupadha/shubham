@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>School Website</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .logo {
+            height: 168px;
+            margin: -49px 76px;
+        }
+
+        nav {
+            width: 100%;
+            background-color: #212122;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            padding: 10px 20px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+            font-size: clamp(0rem, 1.5vw, 2rem);
+        }
+
+        nav ul a {
+            text-decoration: none;
+            color: rgb(0, 136, 255);
+        }
+
+        nav li {
+            cursor: pointer;
+            color: rgb(0, 136, 255);
+            transition: 0.3s ease-in-out;
+        }
+
+        nav li:hover {
+            color: #CC9238;
+        }
+
+        nav li a {
+            text-decoration: none;
+
+        }
+
+        .gallery-container {
+            width: 100%;
+            overflow: hidden;
+            background-color: white;
+            padding: 20px;
+        }
+
+        .first {
+            display: flex;
+            gap: 30px;
+            animation: scrollImages 15s linear infinite;
+        }
+
+        .first img {
+            height: 500px;
+            width: auto;
+            border-radius: 20px;
+        }
+
+        @keyframes scrollImages {
+            0% {
+                transform: translateX(0%);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .first-wrapper {
+            display: flex;
+            width: fit-content;
+        }
+
+        .group {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+
+        .group img {
+            width: 300px;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .group1 {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px;
+            background-color: rgb(255, 255, 255);
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .group1 img {
+            width: 248px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .ncc {
+            flex: 1 1 100%;
+            max-width: 500px;
+        }
+
+        .ncc img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        @media screen and (max-width: 768px) {
+
+            .group img,
+            .group1 img {
+                width: 100%;
+                height: auto;
+            }
+
+            .ncc {
+                max-width: 100%;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        img:hover {
+            transition: transform 0.3s ease-in-out;
+            transform: scale(1.05);
+        }
+
+        .hero {
+            position: relative;
+            width: 100%;
+            height: 450px;
+            overflow: hidden;
+        }
+
+        .banner {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-text {
+            position: absolute;
+            bottom: 40px;
+            left: 60px;
+        }
+
+        .hero-text h1 {
+            font-size: 48px;
+            margin-bottom: 10px;
+            color: white;
+        }
+
+        .hero-text p {
+            font-size: 20px;
+            color: white;
+        }
+
+        #enquiry {
+            background: url(image/school.png);
+            padding: 40px;
+            max-width: 500px;
+            margin: 60px auto;
+  
+
+        }
+
+        #enquiry h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        #enquiry input,
+        #enquiry select,
+        #enquiry textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        #enquiry input[type="file"] {
+            background-color: white;
+        }
+
+        #enquiry button {
+            width: 100%;
+            padding: 12px;
+            background-color: #007bff;
+            color: white;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #enquiry button:hover {
+            background-color: #0056b3;
+        }
+
+     
+        @media screen and (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .logo {
+                margin: 0 auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <img src="image/logo (2).png" alt="School Logo" class="logo" />
+        <ul>
+            <li><a href="#about" style="text-decoration: none; color: inherit;">About</a></li>
+            <li>ACADEMIC</li>
+            <li>ADMISSION PROCEDURE</li>
+            <li><a href="#gallery">GALLERY</a></li>
+            <li>FACILITIES</li>
+            <li onclick="enquireNow()">ENQUIRE NOW</li>
+        </ul>
+    </nav><br>
+
+    <section class="hero" id="home">
+        <img src="image/school.png" alt="School Banner" class="banner" />
+        <div class="hero-text">
+            <h1>Welcome to Matoshree Vidyaniketan</h1>
+            <p>Empowering students through excellence in education.</p>
+        </div>
+    </section>
+
+    <div class="gallery-container">
+        <div class="first-wrapper">
+            <div class="first">
+                <img src="image/img1.jpeg" alt="School Event 1" />
+                <img src="image/img2.jpeg" alt="School Event 2" />
+                <img src="image/img3.jpeg" alt="School Event 3" />
+                <img src="image/img4.jpeg" alt="School Event 4" />
+                <img src="image/img5.jpeg" alt="School Event 5" />
+                <img src="image/img6.jpeg" alt="School Event 6" />
+                <img src="image/img7.jpeg" alt="School Event 7" />
+                <img src="image/img1.jpeg" alt="School Event 1" />
+                <img src="image/img2.jpeg" alt="School Event 2" />
+                <img src="image/img3.jpeg" alt="School Event 3" />
+                <img src="image/img4.jpeg" alt="School Event 4" />
+                <img src="image/img5.jpeg" alt="School Event 5" />
+                <img src="image/img6.jpeg" alt="School Event 6" />
+                <img src="image/img7.jpeg" alt="School Event 7" />
+            </div>
+        </div>
+    </div>
+
+    <div class="group">
+        <img src="image/img10.jpeg" alt="Activity 1" />
+        <img src="image/img12.jpeg" alt="Activity 2" />
+        <img src="image/img13.jpeg" alt="Activity 3" />
+        <img src="image/img14.jpeg" alt="Activity 4" />
+        <img src="https://i.pinimg.com/736x/fe/d2/c8/fed2c8827872f9d727b35ddfde40efcd.jpg" alt="Activity 5" />
+    </div>
+
+    <div class="group1">
+        <div class="ncc">
+            <img src="image/img5.jpeg" alt="NCC Parade" />
+        </div>
+        <img src="https://i0.wp.com/www.opindia.com/wp-content/uploads/2018/03/school.jpg?fit=600%2C400&ssl=1"
+            alt="School Front" />
+        <img src="https://media.istockphoto.com/id/1163985429/photo/group-of-schoolboys-and-schoolgirls-at-school-campus.jpg?s=612x612&w=0&k=20&c=gF0_Qpp1uZ6VAyOi90xprZISgaiLxnpssWky0zJ6gRY="
+            alt="Students" />
+        <img src="https://www.teacheracademy.eu/wp-content/uploads/2021/10/successful-teacher-1.jpg" alt="Teacher 1" />
+        <img src="https://wpvip.edutopia.org/wp-content/uploads/2022/10/lam-169hero-11habits-500px.jpg?w=2880&quality=85"
+            alt="Teacher 2" />
+        <img src="image/teacher1.png" alt="Teacher 3" />
+        <img src="image/img10.jpeg" alt="Event Image" />
+        <img src="image/img11.jpeg" alt="Teacher 3" />
+        <img src="image/img8.jpeg" alt="Event Image" />
+        <img src="image/img9.jpeg" alt="Teacher 3" />
+        <img src="image/img10.jpeg" alt="Event Image" />
+    </div>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" style="padding: 40px; background-color: #f8f8f8;">
+        <h1 style="text-align: center; font-size: 2rem; color: #001f3f;">Welcome To Divine Providence High School</h1>
+        <p style="max-width: 1000px; margin: 20px auto; text-align: center; line-height: 1.6;">
+            Divine Providence High School, your child’s second home has been Shaping minds and Touching lives.
+            Rahul Education started in 1992 with just one school in Bhayandar. Today, 30+ years down the line,
+            it has grown to include a chain of over 55+ institutions that have impacted over 55000+ young lives.
+            You can find Rahul Education branches in most of the major cities in India, namely Thane (Bhayander),
+            Mira Road, Nallasopara, Palghar Pune, Varanasi.
+        </p>
+        <div style="display: flex; flex-direction: column; align-items: center; margin-top: 40px;">
+            <h2 style="color: #001f3f;">OUR <strong>HISTORY</strong></h2>
+            <p style="max-width: 1000px; text-align: justify; line-height: 1.6; margin-top: 20px;">
+                Divine Providence High School, Nallasopara East was established in the year 2005 with a noble objective
+                of Quality education.
+                The school is recognized by the Government of Maharashtra and is affiliated to the Maharashtra State
+                Board of Secondary & Higher
+                Secondary Education. The School is a part of Rahul Education Group that boasts of excellent
+                infrastructure, qualified & committed
+                teachers. We provide our students with a safe learning environment that helps them grow as unique
+                personalities. We know that each
+                child is different and hence a one size fits all teaching method would never do. We employ several
+                innovative teaching techniques
+                that impart knowledge and instill strong values into the child to become responsible future citizens of
+                the world. Along with
+                traditional lessons, we encourage our students to open their minds to a myriad of extracurricular
+                activities, from Music and Dance
+                to swimming and games. We believe in the child finding their happy place in school; it doesn’t matter if
+                it’s in the science lab
+                or the Football field. Today, the school has completed 16 years and has been one of the best State board
+                schools in the vicinity to
+                provide finest education to its students.
+            </p>
+        </div>
+    </section>
+
+    <section id="gallery" style="display: flex; flex-wrap: wrap; padding: 40px; background-color: #fff;">
+        <div style="flex: 3; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px;">
+            <img src="image/img10.jpeg" alt="Lab Activity"
+                style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px;" />
+            <img src="image/img11.jpeg" alt="Microscope"
+                style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px;" />
+            <img src="image/img12.jpeg" alt="Chess"
+                style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px;" />
+            <img src="image/img13.jpeg" alt="Chess Match"
+                style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px;" />
+            <img src="image/img14.jpeg" alt="Scout"
+                style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px;" />
+            <img src="image/img15.jpeg" alt="Sports"
+                style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px;" />
+            <img src="image/img16.jpeg" alt="Classroom"
+                style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px;" />
+            <img src="image/img9.jpeg" alt="Music"
+                style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px;" />
+            <img src="image/img8.jpeg" alt="Happy Students"
+                style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px;" />
+            <img src="image/img7.jpeg" alt="Drawing"
+                style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px;" />
+            <img src="image/img6.jpeg" alt="Teacher Help"
+                style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px;" />
+            <img src="image/img5.jpeg" alt="Physical Training"
+                style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px;" />
+            <img src="image/img4.jpeg" alt="Teacher Help"
+                style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px;" />
+            <img src="image/img3.jpeg" alt="Physical Training"
+                style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px;" />
+        </div>
+    </section>
+
+
+    <div
+        style="flex: 1; padding: 20px; background-color: #14213D; color: white; display: flex; flex-direction: column; justify-content: center; border-radius: 10px;">
+        <h2 style="text-align: center; margin-bottom: 20px;">OUR FACULTY</h2>
+        <p style="line-height: 1.6; font-size: 16px;">
+            A school is only as good as its teachers, and as one of the finest State Board Schools in your vicinity, we
+            know we have to hire the best. Every teacher in our team must undergo a rigorous hiring process before
+            attending the in-house teachers training program. Apart from observing lessons, the teachers have to give
+            assessments to ensure their subject matter knowledge is up to our standards.
+            <br><br>
+            We also train our teachers to adopt our teaching methodologies and ensure that they regularly participate in
+            curriculum workshops and subject-specific seminars to stay updated at all times.
+        </p>
+        <a href="#"
+            style="margin: 20px auto 0; text-align: center; background-color: white; color: #14213D; padding: 10px 25px; border-radius: 30px; font-weight: bold; text-decoration: none;">CLICK
+            HERE</a>
+    </div>
+    </section>
+
+    <section id="enquiry">
+        <h2>Classic Enquiry Form</h2>
+        <form>
+            <input type="text" placeholder="Name" required />
+            <input type="email" placeholder="Email" required />
+            <input type="tel" placeholder="Phone Number" required />
+            <select required>
+                <option value="">Please Select</option>
+                <option value="admission">Admission</option>
+                <option value="fees">Fees Enquiry</option>
+                <option value="other">Other</option>
+            </select>
+            <input type="file" />
+            <button type="submit">SUBMIT</button>
+        </form>
+    </section>
+
+</body>
+
+</html>
